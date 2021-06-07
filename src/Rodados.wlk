@@ -1,11 +1,33 @@
-import wollok.game.*
 
 class ChevroletCorsa { 
 	const  property color =""
+	var property position  =  null
+	var property image  = null
+	var ultimaDireccion  = null
 	method capacidad () =   4 
 	method velocidadMaxima() = 150
 	method peso() = 1300  
 	method color() = color
+	method moverse(direccion){
+		ultimaDireccion  = direccion
+		if (direccion == "norte"){
+			self.position(position.up(1))
+			}
+		else if (direccion == "sur"){
+			self.position(position.down(1))
+			}
+		else if (direccion == "este"){
+			self.position(position.right(1))
+			}
+		else if (direccion == "oeste"){
+			self.position(position.left(1))
+			}
+	}
+	method repetirUltimoMovimiento() =  self.moverse(ultimaDireccion)
+
+//• pasoPor(posicion) 
+//• estaEn(region)  donde hay que crear los objetos que representan regiones. Arranquemos con regiones rectangulares, por ejemplo del (3,3) al (5,8).
+	
 }
 class RenaultKwid {
 	var property tanqueAdicional = false
@@ -47,10 +69,6 @@ class AutosEspeciales{
 	var property peso 
 	var property color
 }
-
-// GAME.:
-
-
 
 
 	

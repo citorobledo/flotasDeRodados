@@ -12,7 +12,7 @@ class Dependencia {
 	method pesoTotalFlota() = flota.sum {rodado => rodado.peso()}
 	method estaBienEquipada() = flota.size() >=3 and  flota.all{rod =>rod.velocidadMaxima() >=100}
 	method capacidadTotalEnColor(color){
-		var soloColor = flota.filter({rod=>rod.color() == color})
+		const soloColor = flota.filter({rod=>rod.color() == color})
 		return  soloColor.sum({rod=>rod.capacidad()})
 	}
 	method colorDelRodadoMasRapido() = flota.max({rod=>rod.velocidadMaxima()}).color()

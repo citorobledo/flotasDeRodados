@@ -1,7 +1,20 @@
 import wollok.game.*
+import Rodados.*
 
-program corsasEnElGame {
-	// hacer las inicializaciones necesarias 
+program corsaGame {
+	game.title("corsa game")
+	game.width(10)
+	game.height(10)
+	
+	var a1 = new ChevroletCorsa( image="autitorojo.png", position =  new Position(x = 1, y = 1) )
+	game.addVisual(a1)
+	a1.moverse("oeste")
+	a1.moverse("sur")
+	a1.moverse("norte")
+	a1.moverse("este")
+	a1.repetirUltimoMovimiento() 
+	a1.moverse("norte")
+	a1.repetirUltimoMovimiento() 
 	
 	game.start()
 }
